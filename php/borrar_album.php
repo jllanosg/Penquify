@@ -1,0 +1,14 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'].'/db_config.php';
+
+$id = $_POST["delete"];
+$sql_statement="DELETE FROM album WHERE id = $1";
+$result = pg_query_params($dbconn, $sql_statement, array($id));
+
+if ($result){
+    header("Location: ../html/crud_album.html");
+} else {
+    echo pg_last_error($dbconn);
+}
+
+?>

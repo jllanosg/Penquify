@@ -1,0 +1,105 @@
+table.table tr{
+    text-align: center;
+}
+.meme{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+.fondo{
+        background-image: url("https://tenor.com/view/rickroll-roll-rick-never-gonna-give-you-up-never-gonna-gif-22954713");
+        background-size: cover;
+        background-repeat:no-repeat;
+        background-attachment: scroll;
+}
+.testeo{
+    background-image: url("https://i.ytimg.com/vi/0VU4toOKxpI/maxresdefault.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+}
+
+.tamano{
+    width:150px; /* or whatever width you want. */
+    max-width:150px; /* or whatever width you want. */
+ }
+
+.somos{
+    text-align:center;
+}
+.fondoc{
+    background-color: rgb(70, 69, 69);
+}
+.gradient-custom-2 {
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    }
+    
+    @media (min-width: 768px) {
+    .gradient-form {
+    height: 100vh !important;
+    }
+    }
+    @media (min-width: 769px) {
+    .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+    }
+.indice{
+    background-image: url("../img/fondoindez.jpg");
+    background-size: cover;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+}
+.banners{
+    background-image: url("../img/banner.jpg");
+    background-color: #E4D7D7;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+}
+.posiciones{
+    justify-content: center;
+    margin: 1rem;
+}
+.fantasma{
+    color: dark;
+}
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+
+.fotoalbum{
+    width:150px;
+    height: 150px;
+}
+
+.window-notice {
+    background: rgba(33, 41, 52, .85);
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    position: fixed;
+    z-index: 999;
+}
+
+.indice2{
+    background-color: #E4D7D7;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.bodyindice{
+    background-image: url("../img/fondoindez.jpg");
+    background-color: #E4D7D7;
+   }

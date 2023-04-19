@@ -1,0 +1,34 @@
+<?php 
+session_start();
+if (isset($_SESSION["email"])) {
+  header("Location: /html/frontpage.html");
+}
+?>
+<?php include ('include/header.html');?>
+<?php include ('include/frontnav.html');?>
+<?php include 'db_config.php';?>
+<bodyindice class="bodyindice">
+    <div class = "container">
+            <div class="indice">
+                <div class="col-12, somos">
+                    <h1 id="title" class="text-center p-3 ms-4" text-color="white">Penquify ♫</h1>
+                </div>
+            </div>
+            <div class="row, indice2">
+                <p>En Penquify nos procupamos de hacer tu día a día menos miserable de lo que ya es, por eso nos gusta entregarte la mayor variedad de música posible, y quien sabe,
+                   talvez evitemos uno que otro suicidio haciendote escuchar de vez en cuando <a href="https://www.youtube.com/watch?v=pnhyCTQFEY8" target="_blank" class="text-body"><u><i>Te Amo</i></u></a> de Huevito Rey,
+                    o si te quieres matar podemos recomendarte <a href="https://www.youtube.com/watch?v=LxOTsiV4tkQ" target="_blank" class="text-body"><u><i>La canción</i></u></a> del Conejito Malo Brrrr</p>
+            </div>
+        </div>
+        <figure class="text-center">
+            <figure>
+                <blockquote class="blockquote">
+                  <p>Porque la música no es solo para ser escuchada, hay que vivirla</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                  Equipo de Penquify <cite title="Source Title">    a tu servicio</cite>
+                </figcaption>
+              </figure>
+        </figure>
+</body>
+</html>

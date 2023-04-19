@@ -1,0 +1,121 @@
+<?php
+require_once("../php/validar.php");?>
+
+<!--validando que sea artista-->
+<?php 
+session_start();
+if(!$_SESSION["es_artista"]){
+    header("Location: ../html/frontpage.html");
+    exit("No artista detected");
+}
+?>
+<?php include '../include/navbar.html'; ?>
+<?php include '../include/header.html'; ?>
+
+<div class="d-flex justify-content-center">
+    
+    <div class="col-4">
+        <!-- formulario 1 -->
+        <div class="row m-3">
+            <div class="card">
+
+                <div class="card-header">
+                    <p class="text-center fs-2">Subir canción</p>
+                </div>    
+                <div class="card-body col-12">
+                <form action= "../php/crud_artista.php" method="POST">
+                    
+                    <div class="form-group">
+                        <input type="text" name="title" class="form-control"
+                        placeholder="Nombre">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" name="id_album" class="form-control"
+                        placeholder="Id album">
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea type="text" name="letra" rows= "2" class="form-control"
+                        placeholder="Letra del tema"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="date" name="fecha" class="form-control">
+                    </div>
+                    
+                    <input type="submit" class="btn btn-succes btn-block form-control border" name="save_task"
+                    value="subir temon">
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+                                    <!-- formulario 2 -->
+    <div class="col-4">
+        <div class="row m-3">
+            <div class="card">
+                <div class="card-header">
+                    <p class="text-center fs-2">Editar canción</p>
+
+                </div>
+                <div class="card-body">
+
+                    <form action= "../php/editor_cancion.php" method="POST">
+                        
+                        <div class="form-group">
+                            <input type="text" name="id_cancion" class="form-control"
+                            placeholder="Id cancion">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="title" class="form-control"
+                            placeholder="Nombre">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="id_album" class="form-control"
+                            placeholder="Id album">
+                        </div>
+                        <div class="form-group">
+                            <textarea type="text" name="letra" rows= "2" class="form-control"
+                            placeholder="Letra del tema"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" name="fecha" class="form-control">
+                        </div>
+                    
+                        <input type="submit" class="btn btn-succes btn-block form-control border" name="save_task"
+                        value="actualizar temon">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container border border-white rounded shadow mb-4">
+    <div class="row justify-content-md-center">
+        <table id="userList" class="table table-borderless">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Letra</th>
+                    <th scope="col">Fecha de creación</th>
+                    <th scope="col" style="width: 10%">Acción</th>
+                </tr>
+            </thead>
+            <?php include '../php/lista_artista.php';?>
+        </table>
+    </div>
+</div>
+
+</div>
+</body>
+<footer class="bg-light text-center text-lg-start fixed-bottom">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright: No copiar.
+      <a class="text-dark" target="_blank" href="https://www.youtube.com/watch?v=AvTOGNXzMCU">Descarga más RAM aqui</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</html>

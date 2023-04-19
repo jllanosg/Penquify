@@ -1,0 +1,49 @@
+
+<?php include '../include/header.html';?>
+  <section class="vh-100" style="background-color: rgb(191,193,194);">
+    <div class="container py-5 h-100">
+      <div class="row d-flex align-items-center justify-content-center h-100">
+        <div class="col-md-8 col-lg-7 col-xl-6">
+          <img src="../img/bannerlogin.jpg"
+          class="img-fluid" alt="Phone image">
+        </div>
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+          <form action="../php/login.php" method="POST">
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="email" id="email" class="form-control form-control-lg" placeholder="Ingresa tu correo" name="email"/>
+                  <label class="form-label" for="email">Correo Electrónico 📧</label>
+                </div>
+                
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input type="password" id="password" class="form-control form-control-lg" placeholder="Ingresa tu contraseña" name="password"/>
+                  <label class="form-label" for="password">Contraseña 🔑</label>
+                </div>
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Ingresar 📤</button>
+            </form>
+  
+            <div class="divider d-flex align-items-center my-4">
+              <p class="text-center fw-bold mx-3 mb-0 text-muted">O talvez</p>
+            </div>
+            
+            <a class="btn btn-warning btn-lg btn-block" style="background-color: #dd9716" href="../html/register.html"
+              role="button">
+              <i class="fab fa-facebook-f me-2"></i>Registrate 🧾
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+<footer class="bg-light text-center text-lg-start">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright: No copiar.
+    <a class="text-dark" target="_blank" href="https://www.youtube.com/watch?v=AvTOGNXzMCU">Descarga más RAM aqui</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+</html>

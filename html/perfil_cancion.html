@@ -1,0 +1,29 @@
+<?php
+require_once("../php/validar.php");?>
+
+<!--validando que sea artista-->
+<?php 
+    session_start();
+    if($_SESSION["es_artista"]){
+        header("Location: ../html/frontpage.html");
+        exit("Artista detected");
+    }else if (!isset($_SESSION["cancion"])){
+        header("Location: ../html/frontpage.html");
+        exit("No hay canción");
+    }
+?>
+<?php include '../include/navbar.html' ?>
+<body>
+    <div class="container">
+        <div class="row-3 m-4 ">
+            <a href="../html/canciones.html" class="btn btn-danger m-5\">Volver</a>
+        </div>
+        <div class="card m-4">
+            <?php include '../php/mostrar_cancion.php' ?>
+        </div>
+
+
+    </div>
+
+
+</body>

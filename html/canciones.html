@@ -1,0 +1,55 @@
+<?php
+require_once("../php/validar.php");?>
+
+<!--validando que sea artista-->
+<?php 
+    session_start();
+    if($_SESSION["es_artista"]){
+        header("Location: ../html/frontpage.html");
+        exit("Artista detected");
+    }
+?>
+<?php include '../include/navbar.html' ?>
+<body>
+    <div class="row-12 m-4">
+        <p class="text-center fs-2">Canciones</p>
+    </div>
+    <div class="container border border-white rounded shadow mb-4">
+    <div class="row justify-content-md-center">
+        <table id="userList" class="table table-borderless">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Album</th>
+                    <th scope="col">Artista</th>
+                    <th scope="col" style="width: 10%">Acción</th>
+                </tr>
+            </thead>
+            <?php include '../php/canciones.php';?>
+        </table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+<footer class="bg-light text-center text-lg-start fixed-bottom">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright: No copiar.
+      <a class="text-dark" target="_blank" href="https://www.youtube.com/watch?v=AvTOGNXzMCU">Descarga más RAM aqui</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</html>

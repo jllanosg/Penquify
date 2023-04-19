@@ -1,0 +1,113 @@
+<?php
+require_once("../php/validar.php");?>
+
+<!--validando que sea artista-->
+<?php 
+    session_start();
+    if(!$_SESSION["es_artista"]){
+        header("Location: ../html/frontpage.html");
+        exit("No artista detected");
+    }
+?>
+<?php include '../include/navbar.html'; ?>
+<?php include '../include/header.html'; ?>
+
+<div class="d-flex justify-content-center">
+
+    <div class="col-4 m-3">
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <p class="text-center fs-2">Subir album</p>
+                </div>
+                <div class="card-body col-12 ">
+                    <form action= "../php/crud_albumes.php" method="POST">
+                        
+                        <div class="form-group">
+                            <input type="text" name="nombre" class="form-control"
+                            placeholder="Nombre del album">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="imagen" class="form-control"
+                            placeholder="Link a imagen">
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="date" name="fecha_lanzamiento" class="form-control">
+                        </div>
+
+                        <input type="submit" class="btn btn-succes btn-block form-control border" name="save_task"
+                        value="subir album">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+<!-- formulario para editar album -->
+    <div class="col-4 m-3">
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <p class="text-center fs-2">Editar album</p>
+                </div>
+                <div class="card-body col-12 ">
+                    <form action= "../php/editor_album.php" method="POST">
+                    
+                        <div class="form-group">
+                            <input type="text" name="id" class="form-control"
+                            placeholder="Id">
+                        </div>
+
+
+                        <div class="form-group">
+                            <input type="text" name="nombre" class="form-control"
+                            placeholder="Nombre del album">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="imagen" class="form-control"
+                            placeholder="Link a imagen">
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="date" name="fecha_lanzamiento" class="form-control">
+                        </div>
+
+                        <input type="submit" class="btn btn-succes btn-block form-control border" name="save_task"
+                        value="Cambiar Atributos">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+<div class="container border border-white rounded shadow mb-4">
+    <div class="row justify-content-md-center">
+        <table id="userList" class="table table-borderless">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">id del album</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Fotito</th>
+                    <th scope="col">Fecha de creacion</th>
+                    <th scope="col" style="width: 10%">Acción</th>
+                </tr>
+            </thead>
+            <?php include '../php/lista_album.php';?>
+        </table>
+    </div>
+</div>
+</body>
+<footer class="bg-light text-center text-lg-start fixed-bottom">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright: No copiar.
+      <a class="text-dark" target="_blank" href="https://www.youtube.com/watch?v=AvTOGNXzMCU">Descarga más RAM aqui</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</html>
